@@ -1,5 +1,7 @@
 # AI Interview Assistant
 
+![AI Interview Assistant Screenshot](screenshot.png)
+
 AI Interview Assistant is an interactive application that uses speech recognition and AI-powered responses to simulate an interview experience. It listens to spoken questions, processes them using OpenAI's GPT model, and provides spoken and written responses.
 
 ## Features
