@@ -2,7 +2,8 @@
 
 ![AI Interview Assistant Screenshot](screenshot.png)
 
-I suppose we are all relegated to fighting fire with fire now. The AI Interview Assistant is an standalone python application that uses speech recognition and AI-powered responses intended to help during the interview process. When active, it listens to all system audio for spoken questions, processes them using OpenAI's api, and then provides spoken and written responses.
+I suppose we are all relegated to fighting fire with fire now. This AI Interview Assistant is an standalone python application that uses speech recognition and AI-powered responses intended to help during the interview process. When active, it listens to all system audio for spoken questions, processes them using OpenAI's api, and then provides spoken and written responses. 
+The idea is that you could have this running while on an online interview (zoom etc.)
 
 ## Features
 
@@ -52,7 +53,7 @@ Before you begin, ensure you have met the following requirements:
 
 4. Click the "Start Listening" button to begin.
 
-5. Ask your question clearly. The application will process your speech and display the question.
+5. If you sk your question clearly, the application will process your speech and display the question.
 
 6. The AI will generate a response, which will be displayed in text and spoken aloud.
 
