@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Answers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img class="logo" src="answers.png" alt="AI Interview Assistant Logo">
+            <span class="close-logo">&times;</span>
+        </div>
+        
+        <div class="content">
+            <div class="questions">
+                <h2>Questions</h2>
+                <div id="questionsArea"></div>
+            </div>
+            <div class="answers">
+                <h2>
+                    Answers
+                    <span id="ttsToggle" class="tts-toggle" title="Toggle Text-to-Speech">🔊</span>
+                </h2>
+                <div id="answersArea"></div>
+            </div>
+        </div>
+        <div class="button-container">
+            <input type="password" id="apiKeyInput" placeholder="Enter OpenAI API Key">
+            <button id="saveApiKey">Save API Key</button>
+            <button id="deleteApiKey">Change/Remove API Key</button>
+            <button id="listenButton">
+                Start Listening
+                <div class="spinner"></div>
+            </button>
+            <button id="clearButton">Clear Text</button>
+        </div>
+    </div>
+
+    <!-- Update the modal structure -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-logo" src="" alt="Logo" style="display: none;">
+            <p id="modal-message" class="text-center"></p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+:root {
+  --primary-color: #7a92a2;
+  --secondary-color: #91b29f;
+  --background-color: #f5f7fa;
+  --text-color: #34495e;
+  --card-background: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease-in-out;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+button {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px var(--shadow-color);
+}
+
+#clearButton {
+  background-color: var(--secondary-color);
+}
+
+#clearButton:hover {
+  background-color: #27ae60;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  flex-grow: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.questions, .answers {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 45%;
+  background-color: var(--card-background);
+  border-radius: 10px;
+  margin: 1vw;
+  padding: 20px;
+  box-shadow: 0 10px 20px var(--shadow-color);
+  transition: all 0.3s ease;
+}
+
+.questions:hover, .answers:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.5em;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+#questionsArea, #answersArea {
+  flex-grow: 1;
+  height: 400px;
+  overflow-y: auto;
+  padding: 15px;
+  background-color: var(--background-color);
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+#questionsArea p, #answersArea p {
+  background-color: var(--card-background);
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  transition: all 0.2s ease;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+#questionsArea p:hover, #answersArea p:hover {
+  transform: translateX(5px);
+  box-shadow: 2px 2px 8px var(--shadow-color);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  
+  .questions, .answers {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Add these styles at the end of your existing CSS file */
+
+/* Update the existing spinner styles and add new styles for the button */
+.spinner {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid transparent;
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+#listenButton {
+  position: relative;
+  padding-right: 40px; /* Make space for the spinner */
+}
+
+#listenButton.listening {
+  background-color: #e74c3c; /* Red color for stop state */
+}
+
+#listenButton.listening:hover {
+  background-color: #c0392b; /* Darker red for hover state */
+}
+
+#listenButton .spinner {
+  display: none;
+}
+
+#listenButton.listening .spinner {
+  display: block;
+}
+
+/* Add these styles for the logo image */
+.logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+  height: auto;
+  width: 500px; /* Adjust this value based on your preferred default size */
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Responsive adjustments for the logo */
+@media (max-width: 768px) {
+  .logo-container {
+    height: 180px; /* Adjust this value for medium screens */
+  }
+  .logo {
+    width: 450px; /* Smaller size for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-container {
+    height: 140px; /* Adjust this value for small screens */
+  }
+  .logo {
+    width: 350px; /* Even smaller size for small screens */
+  }
+}
+
+/* Update these styles for the logo container and logo */
+.logo-container {
+  position: relative;
+  width: 100%;
+  height: 120px; /* Adjust this value based on your logo's height */
+  margin: 0 auto -28px;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+/* Update the logo-hidden class */
+.logo-hidden {
+  height: 0;
+  margin: 0;
+  opacity: 0;
+}
+
+.logo-hidden .logo {
+  opacity: 0;
+}
+
+/* Add these styles for the close-logo button */
+.close-logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 10;
+}
+
+.close-logo:hover {
+  color: #e74c3c;
+}
+
+/* Existing styles... */
+
+/* Add this new style for centered text */
+.text-center {
+  text-align: center;
+}
+
+/* Existing styles... */
+
+/* Add this new style for the API key input */
+#apiKeyInput {
+  width: 300px; /* Increase this value to make it wider */
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Update the button container to better accommodate the wider input */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 28px;
+}
+
+/* Existing styles... */
+
+/* Add these styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: var(--card-background);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: slideIn 0.3s;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+#modal-logo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100px;
+    height: auto;
+}
+
+/* Existing styles... */
+
+/* Add these styles for the TTS toggle */
+.tts-toggle {
+    cursor: pointer;
+    font-size: 0.8em;
+    margin-left: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.tts-toggle.disabled {
+    opacity: 0.5;
+}
+
+/* Existing styles... */
+
+/* Add these styles for the answer container and mute icon */
+.answer-container {
+    position: relative;
+    margin-bottom: 10px;
+    background-color: var(--card-background);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: all 0.2s ease;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.mute-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.mute-icon:hover {
+    opacity: 1;
+}
+
+/* Update this style to accommodate the mute icon */
+#answersArea p {
+    padding: 10px 30px 10px 15px; /* Increased right padding to make room for the mute icon */
+    margin: 0;
+    background-color: var(--card-background);
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: all 0.2s ease;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Modify the hover effect to apply to the container instead of the paragraph */
+.answer-container:hover {
+    transform: translateX(5px);
+    box-shadow: 2px 2px 8px var(--shadow-color);
+}
+
+/* Remove the hover effect from the paragraph */
+#answersArea p:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Existing styles... */
