@@ -32,7 +32,7 @@ Before you begin, ensure you have met the following requirements:
 
 2. Install the required Python packages:
    ```
-   pip install -r requirements.txt
+   pip3 install eel SpeechRecognition openai
    ```
 
 3. Set up your OpenAI API key:
